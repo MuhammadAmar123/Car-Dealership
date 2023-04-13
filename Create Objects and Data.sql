@@ -289,4 +289,15 @@ values
 	(20, 34),
 	(21, 35),
 	(22, 38);
+
+CREATE PROCEDURE SelectAllCustomers @City varchar(30)
+AS
+SELECT * FROM sales.customer WHERE city = @City;
+GO
+create procedure calcsold
+as
+select sum(price) as total_made
+from cars.cars_stock
+where sold = 1;
+go
 */
