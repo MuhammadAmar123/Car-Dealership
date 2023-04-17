@@ -1,4 +1,3 @@
-/*
 create schema cars;
 go
 create schema sales;
@@ -300,4 +299,7 @@ select sum(price) as total_made
 from cars.cars_stock
 where sold = 1;
 go
-*/
+create procedure findcustomer @firstname varchar(50), @lastname varchar(50), @phonenumber varchar(15)
+as
+select * from sales.customer where first_name = @firstname and last_name = @lastname and phone_number = @phonenumber;
+go
